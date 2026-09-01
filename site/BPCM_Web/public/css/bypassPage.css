@@ -1,0 +1,569 @@
+﻿.input-field > label {
+    font-size: 16px;
+    top: 0.6em;
+}
+
+#rtmRefreshUpdateLabels > label {
+    color: white;
+    float: left;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#btn-show-all-children {
+    margin-left: 3em;
+}
+
+.table-footer {
+    display: none !important;
+}
+
+.interval-footer {
+    display: flex !important;
+    background-color: white;
+}
+
+.appNameRTM, .appNameRTMInner {
+    width: 22%;
+}
+
+td.appNameRTMInner {
+    padding-left: 15px !important;
+}
+
+.queueNameRTM {
+    width: 15%;
+}
+
+.queueNameRTMInner {
+    width: 21%;
+}
+
+.intervalRTM {
+    width: 39%;
+    padding-left: 15em !important;
+}
+
+.statusRTM {
+    /* width: 4%; */
+}
+
+.scheduledRTM {
+    width: 5%;
+}
+
+.availableRTM {
+    width: 5%;
+}
+
+.scheduledRTMInner {
+    width: 6%;
+}
+
+.availableRTMInner {
+    width: 7%;
+}
+
+.completedRTM {
+    width: 10%;
+}
+
+.cancelledRTM {
+    /* width: 3%; */
+}
+
+.startTimeRTM {
+    width: 4%;
+}
+
+.endTimeRTM {
+    width: 4%;
+}
+
+.TODPlanRTM {
+    width: 8%;
+}
+
+.successRateRTM {
+    width: 5%;
+    padding: 5px 20px 10px 5px;
+}
+
+.editTODRTM {
+    width: 3%;
+}
+
+.editQueueRTM {
+    /* width: 20%; */
+}
+
+table.dataTable td.details-control:before,
+table.dataTable td.details-control1:before {
+    height: 1.3em;
+    width: 1.3em;
+    display: inline-block;
+    /*    color: white;*/
+    /*    border: 0.15em solid white;*/
+    /*    border-radius: 0em;*/
+    /*    box-shadow: 0 0 0.2em #444;*/
+    box-sizing: content-box;
+    /*    text-align: center;*/
+    /*    text-indent: 0 !important;*/
+    /*    font-family: "Courier New", Courier, monospace;*/
+    /*    line-height: 1em;*/
+    content: "";
+    background-color: transparent !important;
+    background-image: url(../public/images/expand-icon-blue.png) !important;
+    background-size: 100% 100%;
+    margin-top: 0px;
+    padding-right: 1px;
+}
+
+table.dataTable tr.dt-hasChild td.details-control:before,
+table.dataTable tr.dt-hasChild td.details-control1:before {
+    content: "";
+    /*    background-color: #8ba3b5;*/
+    background-image: url(../public/images/collapse-icon.png) !important;
+    margin-top: 0px;
+}
+
+/*.hovering-over {*/
+/*    cursor: url(../public/images/cursor-hand-grab.svg), auto !important;*/
+/*cursor: copy !important;
+}*/
+
+.drag-and-drop {
+    height: 35px;
+/*    width: 100%;*/
+    display: inline-block;
+    content: "";
+    background-color: transparent !important;
+    background-image: url(../public/images/drag-and-drop-icon.png) !important;
+    background-size: 50% 30%;
+    background-position: center;
+    margin-top: 0px;
+    padding-right: 0px;
+    cursor: grab;
+    background-repeat: no-repeat;
+}
+
+
+
+
+/* Hides annoying auto-generated dtr-controls class from DataTable lib that cannot be removed using conventional methods. */
+.empty-placeholder {
+    display: none;
+}
+
+td.details-control {
+    padding-left: 5px !important;
+}
+
+td.details-control1 {
+    padding-left: 5px !important;
+}
+
+
+td.details-control,
+td.details-control1,
+td.details-control2 {
+    cursor: pointer;
+    /* width: 3%; */
+    transition: .5s;
+}
+
+
+
+tr.second {
+    background-color: var(--grey-blue) !important;
+    color: white;
+    font-size: 14px;
+    /* font-weight: 300 !important; */
+}
+
+/*tr.second > th {
+   font-weight: 400 !important;
+}*/
+
+table.dataTable tbody tr {
+    background-color: #5b8bc3;
+}
+
+div.material-table {
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+    /* Have table column headers be aligned left and spaced out more evenly. */
+    div.material-table table th {
+        padding: 0 10px 0 10px;
+        text-align: left !important;
+    }
+
+td.drag-and-drop, td.details-control1 {
+    max-width: 35px;
+    border-left: var(--table-border-thickness) solid var(--standard-blue);
+}
+
+td.delete-configuration-icon {
+    border-right: var(--table-border-thickness) solid var(--standard-blue);
+}
+
+td {
+    /*    border-top: .5px solid #1b5ca6;*/
+    border-bottom: var(--table-border-thickness) solid var(--standard-blue);
+}
+
+thead th {
+    border-bottom: var(--table-border-thickness) solid var(--standard-blue) !important;
+    border-radius: 0px;
+}
+
+:root {
+    --standard-blue: #1b5ca6;
+    --grey-blue: #56657f;
+    --table-border-thickness: 1.75px;
+}
+
+
+
+
+
+/* Create more space for column headers so they are not too small */
+#bypass-summary-datatable thead > tr > th { /* Replace with the actual class or selector of your header cell */
+    min-width: 60px;
+}
+/* Overriding setting from above for icons and expend/collapse.drag and drop */
+thead > tr > th.details-control1,
+thead > tr > th.edit-configuration-icon,
+thead > tr > th.copy-configuration-icon,
+thead > tr > th.delete-configuration-icon {
+    min-width: unset !important;
+}
+
+
+th.yellow-column-name {
+    color: yellow;
+}
+
+thead {
+    background-color: var(--grey-blue) !important;
+    height: 5em;
+    font-size: 12pt;
+    font-weight: 200;
+    /*    font-family: sans-serif;*/
+    /* opacity: 0.8; */
+    /* border-radius: 10px !important; */
+}
+
+/*
+thead tr th[class*="Bypass"]{
+    min-width : 80px;
+}
+*/
+
+/*
+th.appNameBypass.sorting_disabled{
+    display: none;
+}
+*/
+
+
+
+.summaryRow {
+    background-color: #5b8bc3 !important;
+    font-weight: 200;
+}
+
+.configurationAppRow {
+    background-color: #5b8bc3;
+    font-weight: 200;
+}
+
+.summaryQueueRow {
+    background-color: #a9c1dd !important;
+    font-weight: 500;
+}
+
+
+tbody {
+    background-color: transparent;
+}
+
+#bypass-summary-datatable_wrapper {
+    background-color: transparent;
+    overflow-x: auto;
+    max-width: 100%;
+    /* border-radius: 20px 20px 0em 0em !important; */
+}
+
+#u-rtm-main-table .card {
+    background-color: var(--grey-blue);
+    border-radius: 0 !important;
+}
+
+#u-filters {
+    background-color: white;
+}
+
+tr[class*="ChildRow"] {
+    background-color: white !important;
+}
+
+
+th {
+    vertical-align: bottom;
+    padding-bottom: 20px !important;
+    font-weight: bolder !important;
+}
+
+.dtfh-floatingparent.dtfh-floatingparenthead {
+    height: auto !important;
+}
+
+.rotate {
+    transform: rotate(-180deg);
+    transition: all 0.5s linear;
+}
+
+/* Make header column text bold. */
+tr.configurationAppRow > td.languageBypass {
+    color: white;
+    font-weight: bold;
+}
+
+/* Avoid content inside columns from stacking when it is lengthy. */
+div.material-table table tr td {
+    white-space: nowrap;
+}
+
+.modal.modal-fixed-footer.open,
+.autocomplete-content.dropdown-content,
+.modal.datepicker-modal.open,
+.modal.timepicker-modal.open {
+    transform: scaleX(1) scaleY(1) !important;
+    opacity: 1 !important;
+    overflow: unset !important;
+    height: auto !important;
+}
+
+
+.u-rtm-summary-queueDetail > thead {
+    background: var(--grey-blue) !important;
+}
+
+.u-rtm-summary-queue > thead {
+    background: var(--grey-blue) !important;
+}
+
+div.material-table table tbody tr:hover {
+    background-color: #d3d3d3 !important;
+    transform: scale(1.0) !important;
+}
+
+
+.pastTime {
+    background-color: #E1E1E1 !important;
+}
+
+
+table.u-rtm-summary-queue.dataTable.no-footer.dtr-inline.fixedHeader-floating {
+    zoom: 0.893;
+    width: 99% !important;
+    margin: 0;
+}
+
+
+
+table.u-rtm-summary-queueDetail.dataTable.no-footer.dtr-inline.fixedHeader-floating {
+    zoom: 0.941;
+    width: 99% !important;
+    margin: 0;
+}
+
+table.dataTable.no-footer.dtr-inline.fixedHeader-floating {
+    zoom: 0.92;
+    margin: 0;
+    text-align-last: center;
+}
+
+.delete-row-screen {
+    position: absolute;
+    bottom: 5%;
+    left: 40%;
+    height: 30vh;
+    width: 20vw;
+    background-color: #1b5ca6;
+    z-index: 1000;
+    border-radius: 5px;
+}
+
+.warning-image {
+    position: absolute;
+    top: 5%;
+    left: 42%;
+    height: 60px;
+    width: 60px;
+}
+
+/*table.dataTable thead > tr > th.sorting_asc:before,
+table.dataTable thead > tr > th.sorting_desc:before,
+table.dataTable thead > tr > th.sorting_asc:after,
+table.dataTable thead > tr > th.sorting_desc:after {
+    opacity: 1 !important;
+}*/
+
+table.dataTable thead > tr > th.sorting_asc:before,
+table.dataTable thead > tr > th.sorting_desc:after {
+    opacity: 1 !important;
+}
+
+
+table.dataTable thead > tr > th.sorting:before, table.dataTable thead > tr > th.sorting:after, table.dataTable thead > tr > th.sorting_asc:before, table.dataTable thead > tr > th.sorting_asc:after, table.dataTable thead > tr > th.sorting_desc:before, table.dataTable thead > tr > th.sorting_desc:after, table.dataTable thead > tr > th.sorting_asc_disabled:before, table.dataTable thead > tr > th.sorting_asc_disabled:after, table.dataTable thead > tr > th.sorting_desc_disabled:before, table.dataTable thead > tr > th.sorting_desc_disabled:after,
+table.dataTable thead > tr > td.sorting:before,
+table.dataTable thead > tr > td.sorting:after,
+table.dataTable thead > tr > td.sorting_asc:before,
+table.dataTable thead > tr > td.sorting_asc:after,
+table.dataTable thead > tr > td.sorting_desc:before,
+table.dataTable thead > tr > td.sorting_desc:after,
+table.dataTable thead > tr > td.sorting_asc_disabled:before,
+table.dataTable thead > tr > td.sorting_asc_disabled:after,
+table.dataTable thead > tr > td.sorting_desc_disabled:before,
+table.dataTable thead > tr > td.sorting_desc_disabled:after {
+    position: absolute;
+    display: flex;
+    left: 0px;
+    bottom: 50%;
+    opacity: 0.5;
+    font-size: 0.9em;
+    margin-top: 25px;
+    margin-bottom: -25px;
+    margin-left: -13px;
+}
+
+table.dataTable thead > tr > th.sorting, table.dataTable thead > tr > th.sorting_asc, table.dataTable thead > tr > th.sorting_desc, table.dataTable thead > tr > th.sorting_asc_disabled, table.dataTable thead > tr > th.sorting_desc_disabled, table.dataTable thead > tr > td.sorting, table.dataTable thead > tr > td.sorting_asc, table.dataTable thead > tr > td.sorting_desc, table.dataTable thead > tr > td.sorting_asc_disabled, table.dataTable thead > tr > td.sorting_desc_disabled {
+    cursor: pointer;
+    position: relative;
+    padding-right: 15px;
+    font-size: 14px;
+    min-width: 55px;
+}
+
+    table.dataTable thead > tr > th.sorting:before, table.dataTable thead > tr > th.sorting_asc:before, table.dataTable thead > tr > th.sorting_desc:before, table.dataTable thead > tr > th.sorting_asc_disabled:before, table.dataTable thead > tr > th.sorting_desc_disabled:before,
+    table.dataTable thead > tr > td.sorting:before,
+    table.dataTable thead > tr > td.sorting_asc:before,
+    table.dataTable thead > tr > td.sorting_desc:before,
+    table.dataTable thead > tr > td.sorting_asc_disabled:before,
+    table.dataTable thead > tr > td.sorting_desc_disabled:before {
+        bottom: 50%;
+        content: "△";
+    }
+
+    table.dataTable thead > tr > th.sorting:after, table.dataTable thead > tr > th.sorting_asc:after, table.dataTable thead > tr > th.sorting_desc:after, table.dataTable thead > tr > th.sorting_asc_disabled:after, table.dataTable thead > tr > th.sorting_desc_disabled:after,
+    table.dataTable thead > tr > td.sorting:after,
+    table.dataTable thead > tr > td.sorting_asc:after,
+    table.dataTable thead > tr > td.sorting_desc:after,
+    table.dataTable thead > tr > td.sorting_asc_disabled:after,
+    table.dataTable thead > tr > td.sorting_desc_disabled:after {
+        top: 55%;
+        content: "▽";
+    }
+
+#email-div {
+    width: 0;
+    padding: 0;
+    margin: 0;
+}
+
+    #email-div div.input-field {
+        z-index: -1;
+        width: 0;
+        padding: 0;
+        margin: 0;
+    }
+
+.magnified-row {
+    transform: scale(1.01); /* Adjust the scale factor as needed */
+    transition: transform 0.2s ease-in-out; /* Optional: Add a smooth transition */
+}
+
+tr {
+    transition: transform 0.3s ease-in-out; /* Optional: Add a smooth transition */
+}
+
+#u-bypass-form-application, #u-bypass-form-language {
+    caret-color: transparent;
+}
+
+#bypass-table-refresh-button {
+    background-color: transparent;
+    cursor: pointer;
+    float: right;
+    margin-right: 0.5em;
+    font-size: 2.2em;
+    margin-top: 0.5em;
+    margin-bottom: -0.1em;
+    color: ghostwhite;
+    opacity: 0.5;
+}
+
+body.swal2-toast-shown .swal2-container {
+    width: auto !important;
+}
+
+div:where(.swal2-container) div:where(.swal2-popup) {
+    font-size: 1.2rem;
+}
+
+.dataTables_scrollHead {
+    overflow: visible !important;
+}
+
+.dataTables_scrollBody {
+    overflow: visible !important;
+}
+
+/*.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > thead > tr > th > div.dataTables_sizing, 
+.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > thead > tr > td > div.dataTables_sizing, 
+.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > th > div.dataTables_sizing, 
+.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td > div.dataTables_sizing {
+    height: auto !important;
+}*/
+
+.dataTables_sizing {
+    height: auto !important;
+    display: table-cell !important;
+}
+
+.configurationAppRow td {
+    display: table-cell !important;
+}
+
+    .configurationAppRow td:first-child {
+        display: none !important;
+    }
+
+.dataTables_scrollBody #bypass-summary-datatable thead tr th {
+    display: table-cell !important;
+}
+
+    .dataTables_scrollBody #bypass-summary-datatable thead tr th:first-child {
+        display: none !important;
+    }
+
+.configurationChildRow td {
+    display: table-cell !important;
+}
+
+    .configurationChildRow td:first-child {
+        display: none !important;
+    }
+
+.dataTables_scrollHead {
+    display: none;
+}
+
+.dtfh-floatingparent {
+    display: none !important;
+}
+

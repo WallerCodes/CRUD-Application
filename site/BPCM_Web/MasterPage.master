@@ -1,0 +1,209 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="MasterPage" %>
+
+<asp:ContentPlaceHolder ID="GlobalsOverride" runat="server">
+    <script src="./public/js/jquery.js" crossorigin="anonymous"></script>
+
+    <script src="./public/js/libs/jquery.inputmask.min.js"></script>
+
+    <!--script src="./public/js/sweet-alert-min.js"></!--script-->
+    <script src="./public/js/sweetalert2.all.min.js"></script>
+
+    <link rel="stylesheet" href="./public/css/libs/materialicons.css" />
+
+    <link rel="stylesheet" href="./public/libs/datatables/jquery.dataTables.min.css" />
+    <script src="./public/libs/datatables/jquery.dataTables.min.js"></script>
+
+    <link rel="stylesheet" href="./public/libs/datatables/Select-1.4.0/css/select.dataTables.min.css" />
+    <script src="./public/libs/datatables/Select-1.4.0/js/select.dataTables.min.js"></script>
+
+    <link rel="stylesheet" href="./public/libs/datatables/RowGroup-1.2.0/css/rowGroup.dataTables.min.css" />
+    <script src="./public/libs/datatables/RowGroup-1.2.0/js/dataTables.rowGroup.min.js"></script>
+
+    <link rel="stylesheet" href="./public/libs/datatables/Responsive-2.3.0/css/responsive.dataTables.min.css" />
+    <script src="./public/libs/datatables/Responsive-2.3.0/js/dataTables.responsive.min.js"></script>
+
+    <link rel="stylesheet" href="./public/libs/datatables/Buttons-2.2.3/css/buttons.dataTables.min.css" />
+    <script src="./public/libs/datatables/Buttons-2.2.3/js/datatables.buttons.min.js"></script>
+
+    <link rel="stylesheet" href="./public/libs/datatables/FixedHeader-3.2.3/css/fixedHeader.dataTables.min.css" />
+    <script src="./public/libs/datatables/FixedHeader-3.2.3/js/datatables.fixedHeader.min.js"></script>
+
+
+    <!-- <link rel="stylesheet" href="./public/libs/datatables/materialTables.css"> -->
+
+</asp:ContentPlaceHolder>
+
+<!DOCTYPE html>
+
+<html lang="en" itemscope="" itemtype="http://schema.org/Product" class="theme-light">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <!--<link rel="alternate" hreflang="x" />-->
+    <link rel="icon" type="image/png" href="./public/images/favicon.ico">
+
+    <title>Bypass | USAN</title>
+
+
+
+    <%: System.Web.Optimization.Styles.Render("~/bundles_css/libs") %>
+    <%: System.Web.Optimization.Styles.Render("~/bundles_css/master") %>
+
+    <asp:ContentPlaceHolder ID="CustomCSS" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <style>
+        .u-logo {
+            background-image: url(./public/images/USAN-Logo-White.svg) !important;
+            background-size: 4em;
+            font-size: 3rem;
+            background-repeat: no-repeat;
+            pointer-events: none;
+            width: 3.4em;
+            height: 100%;
+            align-content: start;
+            background-position-y: center;
+            background-position-x: left;
+            display: inline-block;
+            margin-left: -0.5em;
+            margin-top: 0.2em;
+        }
+
+        .card {
+            margin-top: -0.35%;
+            margin-bottom: 4rem;
+            border-radius: 10px;
+            -webkit-box-shadow: 7px 7px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
+            box-shadow: 7px 7px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="usan-blue-back lighten-1" role="navigation">
+        <div class="nav-wrapper">
+            <a id="logo-container" href="#" class="u-logo" style="position: absolute; left: 5px;"></a>
+            <!--<span class='u-sitename'>BPCM</span>-->
+
+
+
+            <div class="hamburger-menu">
+                <input id="menu__toggle" type="checkbox" />
+                <label class="menu__btn" for="menu__toggle">
+                    <span></span>
+                </label>
+
+                <ul class="menu__box">
+                    <li><a id="bypassConfigurationMenuItem" class="menu__item" href="./Bypass.aspx">Bypass Configuration</a></li>
+
+                    <li><a class="menu__item" href="./Admin.aspx" id="admin-menu-option" style="display: none;">User Provisioning</a></li>
+                    <li><a id="changePasswordMenuItem" class="menu__item" onclick="showChangePassword()" href="#">Change Password</a></li>
+                    <li><a class="menu__item" onclick="logoutUser()" href="#">Logout</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <!-- MODALS -->
+
+        <!-- Change Password Form -->
+        <div id="changePwForm" style="display: none">
+            <div>
+                <input class="old-password" type="password" required />
+                <input class="new-password" type="password" required />
+                <input class="confirm-password" type="password" required />
+                <div>
+                    <button onclick="cancelAction()" class="formBtn" type="submit">Cancel</button>
+                    <button onclick="changePassword()" class="formBtn" type="submit">Change Password</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form Modal -->
+        <div id="form-modal" style="display: none" class="modal modal-fixed-footer">
+            <div class="modal-header">
+                <h4 class="modal-title"></h4>
+                <i class="small material-icons">close</i>
+            </div>
+            <div class="modal-content"></div>
+            <div class="modal-footer">
+                <a id="fm-save-btn" class="modal-action waves-effect waves-gray btn"><i class="material-icons left">save</i>SAVE</a>
+                <a id="fm-cancel-btn" class="modal-action modal-close waves-effect waves-gray btn">CANCEL</a>
+            </div>
+        </div>
+
+        <!-- Form Modal No Footer -->
+        <div id="form-modal-no-footer" style="display: none" class="modal modal-fixed-footer">
+            <div class="modal-header">
+                <h4 class="modal-title"></h4>
+                <i class="small material-icons">close</i>
+            </div>
+            <div class="modal-content"></div>
+            <!--<div class="modal-footer">
+                <a id="fm-save-btn" class="modal-action waves-effect waves-gray btn"><i class="material-icons left">save</i>SAVE</a>
+                <a id="fm-cancel-btn" class="modal-action modal-close waves-effect waves-gray btn">CANCEL</a>
+            </div> -->
+        </div>
+
+        <!-- Info Modal -->
+        <div id="info-modal" style="display: none" class="modal modal-fixed-footer">
+            <div class="modal-content"></div>
+            <div class="modal-footer">
+                <div id='info-ok-btn' class="modal-action modal-close waves-effect waves-gray btn u-closebutton darken-3">OK</div>
+            </div>
+        </div>
+
+        <!-- YesNo Modal -->
+        <div id="yesno-modal" style="display: none" class="modal modal-fixed-footer">
+            <div class="modal-header">
+                <h4 class="modal-title">Are you sure?</h4>
+                <i onclick="$('#yesno-modal').fadeOut()" class="small material-icons">close</i>
+            </div>
+            <div class="modal-content"></div>
+            <div class="modal-footer">
+                <div id='yesno-yes-btn' class="modal-action modal-close waves-effect waves-gray btn u-closebutton darken-3">YES</div>
+                <div id='yesno-no-btn' class="modal-action modal-close waves-effect waves-gray btn u-closebutton darken-3">NO</div>
+            </div>
+        </div>
+
+        <div id="u-mask">
+            <div class="preloader-wrapper big active">
+                <div class="spinner-layer spinner-blue-only">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <%: System.Web.Optimization.Scripts.Render("~/bundles_js/libs") %>
+    <%: System.Web.Optimization.Scripts.Render("~/bundles_js/master") %>
+
+
+    <asp:ContentPlaceHolder ID="CustomJS" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <!-- inline JS. May be some stuff from server session... -->
+
+
+</body>
+</html>
+
+

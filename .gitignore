@@ -1,0 +1,20 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+.vs/
+site/.vs/
+site/BPCM_Web/.vs/
+site/BPCM_Web/bin/
+site/BPCM_Web/obj/
+
+sql/obj/
+sql/bin/
+sql/.vs/
+
+sql/BypassConfigurationDB.dbmdl
+sql/BypassConfigurationDB.jfm
+
+/BypassConfigurationDB/obj/Debug
+/sql/BypassConfigurationDB.dbmdl
+/sql/BypassConfigurationDB.jfm

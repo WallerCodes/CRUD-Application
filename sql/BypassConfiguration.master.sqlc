@@ -1,0 +1,59 @@
+﻿
+#include "db.sql"
+
+/* Bypass schema and tables */
+#include "bypass.schema.sql"
+#include "bypass_static.schema.sql"
+#include "bypass.applications.sql"
+#include "bypass.languages.sql"
+#include "bypass.configurations.sql"
+
+#include "bypass.roles.sql"
+#include "bypass.users.sql"
+#include "bypass.userRoles.sql"
+
+#include "bypass_static.userAuditActions.sql"
+#include "bypass.userAudits.sql"
+
+#include "bypass.DatabaseConfiguration.sql"
+#include "bypass.ivrSearchTrace.sql"
+
+/* Stored procedures */
+#include "bypass.GetLanguages.sql"
+#include "bypass.GetApplications.sql"
+#include "bypass.AddApplication.sql"
+
+#include "bypass.GetUser.sql"
+#include "bypass.GetUsers.sql"
+#include "bypass.GetUsersCount.sql"
+#include "bypass.AddUser.sql"
+#include "bypass.UpdateUser.sql"
+
+#include "bypass.AddUserRole.sql"
+#include "bypass.RemoveUserRole.sql"
+#include "bypass.UpdateUserRoles.sql"
+#include "bypass.GetUserRoles.sql"
+#include "bypass.GetRolesByUserId.sql"
+
+#include "bypass.AddConfiguration.sql"
+#include "bypass.UpdateConfiguration.sql"
+#include "bypass.RemoveConfiguration.sql"
+#include "bypass.GetConfigurations.sql"
+#include "bypass.ConfigurationOrderList.sql"
+#include "bypass.UpdateConfigurationOrder.sql"
+
+#include "bypass.AddUserAudit.sql"
+#include "bypass.GetUserAuditHistoryCount.sql"
+#include "bypass.GetUserAuditHistory.sql"
+
+#include "bypass.IvrSearchConfigs.sql"
+
+/* Seed data for tables */
+#include "bypass.languages.data.sql"
+#include "bypass.applications.data.sql"
+#include "bypass.roles.data.sql"
+#include "bypass_static.userAuditActions.data.sql"
+#include "bypass.DatabaseConfiguration.data.sql"
+
+/* Cleanup Script */
+#include "bypass.CleanData.sql"

@@ -1,0 +1,4 @@
+CTG-9603 - BPCM Tool Enhancements
+---------------------------
+
+Replace the website files (minus web.config) in the BPCM folder

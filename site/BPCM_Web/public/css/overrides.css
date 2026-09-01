@@ -1,0 +1,299 @@
+.page-footer {
+  padding-top: 0px;
+}
+
+
+
+@media only screen and (min-width: 993px) {
+
+}
+
+input.valid:not([type]), input.valid:not([type]):focus, input[type=text].valid:not(.browser-default), input[type=text].valid:not(.browser-default):focus, input[type=password].valid:not(.browser-default), input[type=password].valid:not(.browser-default):focus, input[type=email].valid:not(.browser-default), input[type=email].valid:not(.browser-default):focus, input[type=url].valid:not(.browser-default), input[type=url].valid:not(.browser-default):focus, input[type=time].valid:not(.browser-default), input[type=time].valid:not(.browser-default):focus, input[type=date].valid:not(.browser-default), input[type=date].valid:not(.browser-default):focus, input[type=datetime].valid:not(.browser-default), input[type=datetime].valid:not(.browser-default):focus, input[type=datetime-local].valid:not(.browser-default), input[type=datetime-local].valid:not(.browser-default):focus, input[type=tel].valid:not(.browser-default), input[type=tel].valid:not(.browser-default):focus, input[type=number].valid:not(.browser-default), input[type=number].valid:not(.browser-default):focus, input[type=search].valid:not(.browser-default), input[type=search].valid:not(.browser-default):focus, textarea.materialize-textarea.valid, textarea.materialize-textarea.valid:focus, .select-wrapper.valid > input.select-dropdown {
+    border-bottom: 1px solid #1478c3;
+    -webkit-box-shadow: 0 1px 0 0 #1478c3;
+    box-shadow: 0 1px 0 0 #1478c3;
+}
+input:not([type]):focus:not([readonly]) + label, input[type=text]:not(.browser-default):focus:not([readonly]) + label, input[type=password]:not(.browser-default):focus:not([readonly]) + label, input[type=email]:not(.browser-default):focus:not([readonly]) + label, input[type=url]:not(.browser-default):focus:not([readonly]) + label, input[type=time]:not(.browser-default):focus:not([readonly]) + label, input[type=date]:not(.browser-default):focus:not([readonly]) + label, input[type=datetime]:not(.browser-default):focus:not([readonly]) + label, input[type=datetime-local]:not(.browser-default):focus:not([readonly]) + label, input[type=tel]:not(.browser-default):focus:not([readonly]) + label, input[type=number]:not(.browser-default):focus:not([readonly]) + label, input[type=search]:not(.browser-default):focus:not([readonly]) + label, textarea.materialize-textarea:focus:not([readonly]) + label {
+    color: #1478c3;
+}
+input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #5AA1D7;
+    -webkit-box-shadow: 0 1px 0 0 #5AA1D7;
+    box-shadow: 0 1px 0 0 #5AA1D7;
+}
+
+[type="checkbox"]+span:not(.lever):before {
+  border: none;
+}
+
+[type="checkbox"]+span:not(.lever) {
+  height: 30px;
+  padding-left: 25px;
+  top: 8px;
+}
+
+[type="checkbox"]:checked+span:not(.lever):before {
+  top: -2px;
+  left: 5px;
+  width: 10px;
+  height: 20px;
+  border-top: 2px solid transparent;
+  border-left: 2px solid transparent;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+
+}
+
+.dropdown-content li>a, .dropdown-content li>span {
+  color: #1478c3;
+}
+
+.select-wrapper input.select-dropdown:focus {
+    border-bottom: 1px solid #1478c3;
+}
+.datepicker-date-display, .timepicker-digital-display {
+  background-color: #1478c3;
+}
+.timepicker-close, .timepicker-cancel, .datepicker-cancel, .datepicker-clear, .datepicker-today, .datepicker-done, .datepicker-table td.is-today {
+  color: #1478c3;
+}
+.datepicker-table td.is-selected {
+  background-color:  #1478c3;
+}
+
+div.material-table .table-footer .material-pagination li.disabled a  {
+    color: rgba(0, 0, 0, 0.24);
+}
+
+div.material-table table tr td {
+  padding: 0 5px;
+  text-align: center;
+}
+
+div.material-table table th {
+  padding: 0;
+}
+.btn:focus, .btn-large:focus, .btn-small:focus, .btn-floating:focus {
+  background-color: #ffffff;
+}
+.material-tooltip {
+  background-color: rgba(20, 120, 195, 0.74);
+  white-space: pre-line;
+}
+
+table.dataTable thead > tr > th.sorting_asc, 
+table.dataTable thead > tr > th.sorting_desc, 
+table.dataTable thead > tr > th.sorting, 
+table.dataTable thead > tr > td.sorting_asc, 
+table.dataTable thead > tr > td.sorting_desc, 
+table.dataTable thead > tr > td.sorting  {
+  padding-right: 0;
+}
+
+button:focus {
+  outline: none;
+  background-color: #a4bedb;
+}
+
+div.material-table table th:first-child, div.material-table table td:first-child {
+  padding: 0 5px 0 5px;
+}
+
+ul.typeahead.typeahead-long.dropdown-menu {
+  height: 125px;
+  width: 95%;
+}
+
+.confirmation-btns > button {
+  background: none !important;
+}
+
+@media all and (forced-colors: none), (forced-colors: active) {
+    .modal {
+        overflow: auto;
+        bottom: 33%
+    }
+}
+
+.fa-play-circle:before {
+  position: absolute !important;
+}
+.fa-pause-circle:before {
+  position: absolute !important;
+}
+
+input[type='range'] {
+  -webkit-appearance: none;
+  background-color: #ddd;
+  height: 20px;
+  border-radius: 10px;
+  margin-left: 10px;
+  overflow: hidden;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #1478c3;
+  max-width: 100%;
+  background-color: #ddd;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  height: 20px;
+  background-color: #ddd;
+}
+
+
+input[type=range]::-webkit-slider-thumb {
+  height: 18px;
+  width: 18px;
+    border: 0;
+    background-color: #fff;
+    border: 1px solid #777;
+    border-radius: 50%;
+    box-shadow: -1010px 0 0 1000px #1478c3;
+    -webkit-appearance: none !important;
+    margin-top: 1px;
+}
+
+
+
+input[type="range"]::-ms-thumb {
+  background: #1478c3;
+  height: 20px;
+  border-radius: 50%;
+}
+
+input[type="range"]::-ms-fill-upper {
+  background-color: #ddd;
+}
+input[type="range"]::-ms-fill-lower {
+  background-color: #1478c3;
+}
+
+
+.large-frame {
+   zoom: 1.0;
+}
+
+.small-frame {
+   zoom: 0.8;
+}
+
+
+
+.btn__content {
+  background-color: #1356a3 !important;
+}
+
+.lex-web-ui-iframe {
+   min-width: 25% !important;
+   min-height: 40% !important;
+   max-height: 50% !important;
+   max-width: 50% !important;
+   margin-bottom: 0px !important;
+   margin-right: 3px !important;
+
+}
+
+.toolbar.theme--dark.red {
+ background-color: #1356a3 !important;
+}
+
+.toolbar__title {
+ font-family:"Sans-serif" !important;
+ font-size: 16px !important;
+ color: #ffffff !important;
+}
+
+.message-list-container {
+ background-color: #fefefe !important
+}
+
+
+.message-bot .message-bubble {
+ background-color: #eeedeb !important;
+}
+
+.message-human .message-bubble {
+ background-color: #afcffa !important;
+}
+
+
+#datatable tbody td {
+   word-break: break-word !important;
+   /* vertical-align: top; */
+}
+
+
+#yesno-modal {
+   color: black;
+   top: 30% !important;
+   width: 20%;
+   height: 23% !important;
+   border: 6px solid #05477A;
+}
+
+
+#yesno-modal .modal-title {
+   font-size: 20px;
+}
+
+#yesno-modal .modal-content {
+   font-size: 16px;
+   box-shadow: none !important;
+   border-radius: 0 !important;
+}
+
+#yesno-modal .modal-footer {
+   height: 35%;
+}
+
+#yesno-yes-btn, #yesno-no-btn {
+   line-height: 1.8 !important;
+   height: 45px;
+   font-size: 14px;
+   margin-right: 10px;
+   margin-left: 10px;
+}
+
+#yesno-yes-btn:hover, #yesno-no-btn:hover {
+   color: white;
+}
+
+
+.unlock {
+   color: rgba(174, 174, 174, 0.25) !important;
+}
+
+
+.fa-save {
+   font-size: 40px !important;
+   line-height: 0.3;
+   color: #e49969;
+}
+
+#u-call-seq-search::placeholder {
+  color: #9e9e9e !important;
+}
+
+
+:-ms-input-placeholder {
+  color: #9e9e9e !important;
+}
+
+
+.Email:-ms-input-placeholder,
+.Password:-ms-input-placeholder {
+  color: white !important;
+}
+
+
+.swal2-popup.swal2-toast .swal2-icon::before {
+  margin-top: 0px;
+  margin-left: 1px;
+}
+
+.card {
+   margin: 1rem 1rem 1rem 1rem !important;
+}

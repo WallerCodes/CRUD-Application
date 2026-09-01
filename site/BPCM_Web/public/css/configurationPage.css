@@ -1,0 +1,869 @@
+#u-config-queue > input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
+    text-align: left;
+}
+
+#u-global-form-globalPortLimit, .appGlobalPorts, #u-config-tod input {
+    text-align: center !important;
+}
+
+.input-field > label {
+    font-size: 14px;
+    top: 0.1em;
+}
+
+.hours {
+    width: 100%;
+    position: relative;
+}
+
+.hour {
+    width: 100%;
+    height: auto;
+    background-color: #efeff6;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.datelabel {
+    margin-bottom: 15px;
+    display: inline;
+    font-size: 24px;
+    margin-right: 30px;
+}
+
+.timeslot-main > strong {
+    font-size: 20px;
+}
+
+.timeslot-main {
+    background-color: #0C76EF;
+    width: auto;
+    height: 20px;
+    color: white;
+    padding: 18px 40px;
+    margin-top: 5px;
+    font-size: 18px;
+    border-radius: 3px;
+    vertical-align: center;
+    text-align: center;
+    display: inline-table;
+    margin-right: 25px;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 4px 5px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
+}
+
+.timeslot {
+    background-color: #0C76EF;
+    width: auto;
+    height: 20px;
+    color: white;
+    padding: 15px 40px;
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 3px;
+    vertical-align: center;
+    text-align: center;
+    display: inline-table;
+    margin-right: 20px;
+    position: relative;
+    border-radius: 15px;
+    display: none;
+    box-shadow: 4px 4px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
+}
+
+    .timeslot-main:hover, .timeslot:hover {
+        background-color: #A4CCF9;
+        cursor: pointer;
+    }
+
+    .timeslot > a {
+        z-index: 99;
+        /* line-height: 2; */
+        bottom: 11px;
+        left: 5px;
+        /* padding-bottom: 10px; */
+        color: white;
+        position: relative;
+    }
+
+.timeslot-main > a {
+    z-index: 99;
+    bottom: 10px;
+    color: white;
+    position: relative;
+}
+
+.tod-outer {
+    height: 450px;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+
+.slotCount {
+    position: absolute;
+    bottom: 0;
+    float: right;
+    right: 0;
+    color: white;
+    width: 100%;
+}
+
+    .slotCount > textfield {
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        width: auto;
+        background: #90afd4;
+        border-radius: 7px;
+        min-width: 30px;
+        font-weight: 500;
+        text-align: right;
+        padding-right: 10px;
+        padding-left: 10px;
+        font-size: 16px;
+        max-width: 100%;
+    }
+
+.display-cb {
+    display: inline;
+    opacity: 1 !important;
+}
+
+.display {
+    display: inline;
+}
+
+
+#switch {
+    left: 92%;
+    width: 75px;
+    height: 40px;
+}
+
+
+#editModeQueueToggle {
+    left: 2em;
+    width: 9em;
+}
+
+#editModeTODToggle {
+    margin-left: 3em;
+    width: 9em;
+}
+
+.toggle {
+    position: absolute;
+    border: 2px solid #444249;
+    border-radius: 20px;
+    -webkit-transition: border-color .6s ease-out;
+    transition: border-color .6s ease-out;
+    box-sizing: border-box;
+}
+
+    .toggle.toggle-on {
+        border-color: rgba(137, 194, 217, .4);
+        -webkit-transition: all .5s .15s ease-out;
+        transition: all .5s .15s ease-out;
+    }
+
+.toggle-button {
+    position: absolute;
+    top: 4px;
+    width: 28px;
+    bottom: 4px;
+    right: 39px;
+    background-color: #444249;
+    border-radius: 19px;
+    cursor: pointer;
+    -webkit-transition: all .3s .1s, width .1s, top .1s, bottom .1s;
+    transition: all .3s .1s, width .1s, top .1s, bottom .1s;
+}
+
+.toggle-on .toggle-button {
+    top: 3px;
+    width: 65px;
+    bottom: 3px;
+    right: 3px;
+    border-radius: 23px;
+    background-color: #89c2da;
+    box-shadow: 0 0 16px #4b7a8d;
+    -webkit-transition: all .2s .1s, right .1s;
+    transition: all .2s .1s, right .1s;
+}
+
+#editModeQueueToggleDiv > .toggle.toggle-on .toggle-button,
+#editModeTODToggleDiv > .toggle.toggle-on .toggle-button {
+    top: 3px;
+    width: 8.4em;
+    bottom: 3px;
+    right: 3px;
+    border-radius: 23px;
+    background-color: #89c2da;
+    box-shadow: 0 0 16px #4b7a8d;
+    -webkit-transition: all .2s .1s, right .1s;
+    transition: all .2s .1s, right .1s;
+}
+
+.toggle-button.edit-togg {
+    position: absolute;
+    top: 4px;
+    width: 28px;
+    bottom: 4px;
+    right: 6.4em;
+    background-color: #444249;
+    border-radius: 19px;
+    cursor: pointer;
+    -webkit-transition: all .3s .1s, width .1s, top .1s, bottom .1s;
+    transition: all .3s .1s, width .1s, top .1s, bottom .1s;
+}
+
+
+.toggle-text-on {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    line-height: 36px;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    cursor: pointer;
+    -webkit-user-select: none; /* Chrome/Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+
+
+    color: rgba(0,0,0,0);
+}
+
+.toggle-on .toggle-text-on {
+    color: #3b6a7d;
+    -webkit-transition: color .3s .15s;
+    transition: color .3s .15s;
+}
+
+.toggle-text-off {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 6px;
+    line-height: 36px;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    -webkit-user-select: none; /* Chrome/Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+
+    cursor: pointer;
+    color: #444249;
+}
+
+.toggle-on .toggle-text-off {
+    color: rgba(0,0,0,0);
+}
+
+/* used for streak effect */
+.glow-comp {
+    position: absolute;
+    opacity: 0;
+    top: 10px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    border-radius: 6px;
+    background-color: rgba(75, 122, 141, .1);
+    box-shadow: 0 0 12px rgba(75, 122, 141, .2);
+    -webkit-transition: opacity 4.5s 1s;
+    transition: opacity 4.5s 1s;
+}
+
+.toggle-on .glow-comp {
+    opacity: 1;
+    -webkit-transition: opacity 1s;
+    transition: opacity 1s;
+}
+
+
+.threshold-min {
+    float: left;
+    width: 90%;
+    top: -10px;
+}
+
+.threshold-max {
+    float: left;
+    width: 90%;
+    top: -10px;
+}
+
+
+
+.weekDays-selector input {
+    display: none !important;
+}
+
+    .weekDays-selector input[type=checkbox] + label {
+        display: inline-block;
+        border-radius: 6px;
+        background: none;
+        height: 40px;
+        width: 150px;
+        margin-right: 3px;
+        line-height: 40px;
+        text-align: center;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .weekDays-selector input[type=checkbox]:checked + label {
+        background: #0C76EF;
+        color: #ffffff;
+    }
+
+#u-form-tod-weekdays {
+    margin-top: 1em;
+}
+
+td.details-control {
+    padding-left: 5px !important;
+}
+
+td.details-control1 {
+    padding-left: 15px !important;
+}
+
+
+td.details-controlQueueTod {
+    padding-left: 15px !important;
+}
+
+td.details-control,
+td.details-control1,
+td.details-control2,
+td.details-controlQueueTod {
+    cursor: pointer;
+    width: 3%;
+    transition: .5s;
+}
+
+td.details-controlQueueTod2 {
+    cursor: pointer;
+    width: 4%;
+    transition: .5s;
+}
+
+.appNameConfig, .appNameConfigInner {
+    width: 12%;
+}
+
+.appNameTodApp {
+    width: 8%;
+}
+
+
+.appNameTod {
+    width: 10%;
+}
+
+
+
+.queueNameConfig {
+    width: 20%;
+}
+
+.queueNameConfigInner {
+    width: 15%;
+}
+
+.queueNameConfigTodQueue {
+    width: 9%;
+}
+
+.queueNameConfigTod {
+    width: 12%;
+}
+
+.statusConfig {
+    width: 5%;
+}
+
+.statusTodConfig {
+    width: 6%;
+}
+
+.statusTodEntryConfig {
+    width: 6%;
+}
+
+.scheduledConfig {
+    width: 5%;
+}
+
+.availableConfig {
+    width: 5%;
+}
+
+.scheduledConfigInner {
+    width: 6%;
+}
+
+.availableConfigInner {
+    width: 15%;
+}
+
+.createdByConfig {
+    width: 14%;
+}
+
+.createDateConfig {
+    width: 11%;
+}
+
+.startDateConfig {
+    width: 8%;
+}
+
+.endDateConfig {
+    width: 8%;
+}
+
+.startTimeConfig {
+    width: 7%;
+}
+
+.endTimeConfig {
+    width: 7%;
+}
+
+.startTimeTodConfig {
+    width: 10%;
+}
+
+.endTimeTodConfig {
+    width: 10%;
+}
+
+.TODPlanConfig {
+    width: 13%;
+}
+
+.TODPlanName {
+    width: 20%;
+}
+
+.TODPlanN {
+    width: 10%;
+}
+
+.TODPlanDescription {
+    width: 20%;
+}
+
+.TODPlanDescriptionN {
+    width: 10%;
+}
+
+.editTODConfig {
+    width: 5%;
+    padding-left: 20px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.editQueueConfig {
+    width: 4%;
+    padding-left: 20px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+table.dataTable tr.dt-hasChild td.details-control:before,
+table.dataTable tr.dt-hasChild td.details-control1:before,
+table.dataTable tr.dt-hasChild td.details-controlQueueTod:before {
+    height: 1.2em;
+    width: 1.2em;
+    margin-top: -9px;
+    display: inline-block;
+    color: white;
+    border: 0.15em solid white;
+    border-radius: 1em;
+    box-shadow: 0 0 0.2em #444;
+    box-sizing: content-box;
+    text-align: center;
+    text-indent: 0 !important;
+    font-family: "Courier New", Courier, monospace;
+    line-height: 1.6em;
+    content: "^";
+    background-color: lightslategray;
+    margin-top: 10px;
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+
+
+
+#btn-show-all-children, #btn-show-all-children-tod {
+    margin-left: 3em;
+}
+
+
+
+.table-footer {
+    /* display: none !important; */
+    background: white;
+}
+
+.saveFloatRight {
+    float: right !important;
+}
+
+
+
+
+.dt-buttons {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+    .dt-buttons > button {
+        background-color: white;
+    }
+
+button.dt-button:hover:not(.disabled) {
+    background-color: #388BCA;
+}
+
+.dt-buttons > button {
+    font-size: 12px;
+    border-radius: 20px !important;
+    margin-right: 1em;
+    /* float: right; */
+    margin-bottom: 1em;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
+}
+
+/*
+.table-footer {
+   background-color: white;
+   border-radius: 0px 0px 10px 10px;
+}*/
+
+tbody {
+    background-color: white;
+}
+
+#config-summary-datatable_wrapper, #config-tod-datatable_wrapper {
+    background-color: #69839F;
+    border-radius: 10px;
+}
+
+
+.time-out-of-window {
+    background-color: #AAAAAA;
+}
+
+#slider {
+    height: 5px !important;
+}
+
+
+
+.html-duration-picker-input-controls-wrapper .html-duration-picker {
+    text-align: right;
+    padding-right: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    cursor: text;
+}
+
+.html-duration-picker-input-controls-wrapper .scroll-btn {
+    text-align: center;
+    width: 16px;
+    padding: 0 4px;
+    border: none;
+    cursor: default;
+    position: absolute;
+}
+
+.html-duration-picker-input-controls-wrapper .caret {
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+    .html-duration-picker-input-controls-wrapper .caret.caret-up {
+        border-width: 0 4px 5px 4px;
+        border-color: transparent transparent #000 transparent;
+    }
+
+    .html-duration-picker-input-controls-wrapper .caret.caret-down {
+        border-width: 5px 4px 0 4px;
+        border-color: #000 transparent transparent transparent;
+    }
+
+.html-duration-picker-input-controls-wrapper .controls {
+    display: inline-block;
+    position: absolute;
+    top: 1px;
+    padding: 2px 0;
+}
+
+.html-duration-picker-input-controls-wrapper {
+    display: inline-block;
+    position: relative;
+    background: transparent;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+#u-addqueue-application, #u-addqueue-queue, #u-addqueue-todPlan, #u-addtod-todPlan {
+    width: 100% !important;
+}
+
+.rotate {
+    transform: rotate(-180deg);
+    transition: all 1s linear;
+}
+
+
+td.details-control {
+    padding-left: 5px !important;
+}
+
+td.details-control1 {
+    padding-left: 5px !important;
+}
+
+
+td.details-control,
+td.details-control1,
+td.details-control2 {
+    cursor: pointer;
+    width: 2%;
+    transition: .5s;
+}
+
+
+
+.u-config-tod > thead {
+    background: #56657f !important;
+}
+
+tbody > tr > td > div > .table-footer {
+    display: none !important;
+}
+
+/*
+#config-tod-datatable_wrapper > .table-footer {
+   display: none !important;
+}*/
+
+.todPlanRow {
+    font-weight: 500;
+}
+
+.u-trash {
+    height: 30px;
+    /* margin-top: -4px; */
+    width: 25px;
+    margin-bottom: 5px;
+}
+
+
+.dataTables_wrapper {
+    background: #56657f !important;
+}
+
+
+.u-addtod-weekDays-selector input,
+.u-tod-form-weekDays-selector input {
+    display: none !important;
+}
+
+    .u-addtod-weekDays-selector input[type=checkbox] + label,
+    .u-tod-form-weekDays-selector input[type=checkbox] + label {
+        display: inline-block;
+        border-radius: 6px;
+        background: none;
+        height: 40px;
+        width: 150px;
+        margin-right: 3px;
+        line-height: 40px;
+        text-align: center;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .u-addtod-weekDays-selector input[type=checkbox]:checked + label,
+    .u-tod-form-weekDays-selector input[type=checkbox]:checked + label {
+        background: #0C76EF;
+        color: #ffffff;
+    }
+
+
+    .u-addtod-weekDays-selector input[type=checkbox] + label,
+    .u-tod-form-weekDays-selector input[type=checkbox] + label {
+        display: inline-block;
+        border-radius: 6px;
+        background: none;
+        height: 40px;
+        width: 120px;
+        margin-right: 5px;
+        line-height: 40px;
+        text-align: center;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+#u-addtod-startDate-div > .modal.datepicker-modal.open > .datepicker-container.modal-content,
+#u-tod-form-startDate-div > .modal.datepicker-modal.open > .datepicker-container.modal-content {
+    display: contents;
+    z-index: 9999 !important;
+}
+
+#u-addtod-startDate-div > .modal.datepicker-modal.open,
+#u-tod-form-startDate-div > .modal.datepicker-modal.open {
+    display: contents;
+    z-index: 9999 !important;
+    top: -10% !important;
+}
+
+#u-addtod-endDate-div > .modal.datepicker-modal.open > .datepicker-container.modal-content,
+#u-tod-form-endDate-div > .modal.datepicker-modal.open > .datepicker-container.modal-content {
+    display: contents;
+    z-index: 9999 !important;
+}
+
+#u-addtod-endDate-div > .modal.datepicker-modal.open,
+#u-tod-form-endDate-div > .modal.datepicker-modal.open {
+    display: contents;
+    z-index: 9999 !important;
+    top: -10% !important;
+}
+
+
+#u-addtod-startTime-div > .modal.timepicker-modal.open > .timepicker-container.modal-content,
+#u-tod-form-startTime-div > .modal.timepicker-modal.open > .timepicker-container.modal-content {
+    display: contents;
+    z-index: 9999 !important;
+}
+
+#u-addtod-startTime-div > .modal.timepicker-modal.open,
+#u-tod-form-startTime-div > .modal.timepicker-modal.open {
+    display: -webkit-box !important;
+    z-index: 9999 !important;
+    top: -10% !important;
+}
+
+#u-addtod-endTime-div > .modal.timepicker-modal.open > .timepicker-container.modal-content,
+#u-tod-form-endTime-div > .modal.timepicker-modal.open > .timepicker-container.modal-content {
+    display: contents;
+    z-index: 9999 !important;
+}
+
+#u-addtod-endTime-div > .modal.timepicker-modal.open,
+#u-tod-form-endTime-div > .modal.timepicker-modal.open {
+    z-index: 9999 !important;
+    top: -10% !important;
+    display: -webkit-box !important;
+}
+
+#u-addtod-todPlanEntry,
+#u-tod-form-todPlanEntry {
+    width: 100%;
+}
+
+
+#u-edit-todplan-table > .card {
+    margin: 2rem 2rem 2rem 2rem !important;
+}
+
+table.dataTable.no-footer.dtr-inline.fixedHeader-floating {
+    zoom: 0.895;
+}
+
+.dtfh-floatingparent.dtfh-floatingparenthead {
+    height: 4em !important;
+}
+
+table.dataTable.no-footer.dtr-inline.fixedHeader-floating[aria-describedby="config-tod-datatable_info"] {
+    zoom: 0.967;
+}
+
+table.dataTable.no-footer.dtr-inline.fixedHeader-floating[aria-describedby="config-summary-datatable_info"] {
+    zoom: 0.93;
+    width: 100% !important;
+}
+
+th.sorting_disabled {
+    text-align: center !important;
+}
+
+#u-tod-form-closed-div, #u-addtod-closed-div {
+    margin-top: -2em;
+    margin-bottom: 4em;
+}
+
+
+
+.u-entry-checkbox [type="checkbox"]:not(:checked) + span:not(.lever):before {
+    border: none !important;
+    color: red !important;
+    content: '' !important;
+    font-size: 22px;
+    margin-top: 0px;
+    margin-left: 0.33em;
+}
+
+.u-entry-checkbox [type="checkbox"] + span:not(.lever) {
+    padding-left: 30px;
+}
+
+
+[type="checkbox"]:checked + span:not(.lever):before {
+    margin-left: 0.45em;
+    margin-top: 5px;
+    height: 20px;
+    width: 10px;
+}
+
+/* Overwrite the autocomplete lib so that disabled titles still show as blue. */
+/*input[type=search]:not(.browser-default):disabled + label {
+    color: #205fa8;
+}*/
+
+/* Craete dummy field for browser to autofill and hide it. */
+#email-honeypot {
+    z-index: -10;
+}
+
+#u-config-form-application, #u-config-form-language {
+    caret-color: transparent;
+}
+
+.autocomplete-content.dropdown-content {
+    transform: scaleX(1) scaleY(1) !important;
+    opacity: 1 !important;
+    overflow: unset !important;
+    height: auto !important;
+}
+
+input[id^="u-config-form"] {
+    text-align: center !important;
+}

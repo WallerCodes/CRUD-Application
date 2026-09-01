@@ -1,0 +1,420 @@
+body {
+    /*padding-top: 5rem;*/
+    background-color: var(--color-background);
+}
+
+main {
+  margin-bottom: 60px; /* this is for the footer */
+}
+
+h5 {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0;
+}
+h4 {
+  margin: 0;
+}
+.usan-blue-back {
+    background-color: var(--color-primary);
+    padding: 0 3em;
+    height: 50px;
+    line-height: 50px;
+}
+
+nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i {
+    height: 50px;
+    line-height: 50px;
+}
+.u-sitename {
+    display: inline-block;
+    position: absolute;
+    width: 14em;
+    text-align: right;
+    font-size: 1.5rem;
+}
+
+.u-logo {
+  background-image: url(../images/USAN-Logo-White.svg) !important;
+  background-size: 3.4em;
+  font-size: 2rem;
+  background-repeat: no-repeat;
+  width: 3.4em;
+  height: 100%;
+  background-position-y: center;
+  background-position-x: left;
+  display: inline-block;
+}
+
+#menu {
+   z-index: 2;
+}
+
+#menu-bar {
+   width: 45px;
+   height: 40px;
+   margin: 30px 20px 20px 15px;
+   cursor: pointer;
+}
+
+.bar {
+   height: 5px;
+   width: 100%;
+   background-color: #DC052D;
+   display: block;
+   border-radius: 5px;
+   transition: 0.3s ease;
+}
+
+#bar1 {
+   transform: translateY(-4px);
+}
+
+#bar3 {
+   transform: translateY(4px);
+}
+
+.nav {
+   transition: 0.3s ease;
+   display: none;
+}
+
+   .nav ul {
+      padding: 0 22px;
+   }
+
+   .nav li {
+      list-style: none;
+      padding: 12px 0;
+   }
+
+      .nav li a {
+         color: white;
+         font-size: 20px;
+         text-decoration: none;
+      }
+
+         .nav li a:hover {
+            font-weight: bold;
+         }
+
+
+.btn, .btn-large, .btn-small {
+  color: white;
+  background-color: var(--color-primary);
+  margin: 
+}
+
+
+.btn:hover, .btn-large:hover, .btn-small:hover {
+  background-color: var(--color-button);
+  color: white;
+}
+
+
+.btn:focus, .btn-large:focus, .btn-small:focus, .btn-floating:focus {
+  background-color: var(--color-primary);
+}
+
+.btn-secondary {
+  background-color: var(--color-button-secondary);
+}
+.btn-secondary:focus {
+  background-color: var(--color-button-secondary);
+}
+
+.collection .collection-item.active {
+    background-color: var(--color-primary);
+    color: #ffffff;
+}
+
+.login-header {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 1em auto;
+    font-family: 'Helvetica Rounded ST', 'Arial Rounded MT', sans-serif;
+    color: #1478c3;
+    padding-bottom: 0.5em;
+}
+
+/* CUSTOM STUFF */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+
+}
+.page-footer {
+  background-color: white;
+}
+#u-status-text {
+  color: var(--color-primary);
+}
+.uPanel {
+    background-color: var(--color-panel);
+    margin: 20px;
+}
+.uPanelTitle {
+    width: 100%;
+    font-size: 1.6rem;
+    background-color: var(--color-primary);
+    display: block;
+    text-align: center;
+    color: white;
+    padding: 0.2em;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,0.14), 0 3px 1px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.2);
+}
+.theme-default .uPanelTitle {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.theme-default .z-depth-1, .theme-default nav, .theme-default .card-panel, .theme-default .card, .theme-default .toast, .theme-default  .btn, .theme-default .btn-large, .theme-default .btn-small, .theme-default  .btn-floating, .theme-default .dropdown-content,.theme-default  .collapsible, .theme-default .sidenav {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+ }
+
+.theme-default nav {
+    border-bottom: 1px solid #c9c9e37a;
+    background: #4C99D9;
+ }
+
+.theme-default label {
+    color: var(--color-form-element);
+}
+
+.u-tree .active {
+  background-color: var(--color-primary) !important;
+}
+.u-tree-header {
+  font-weight: 600;
+  text-align: center;
+  padding-top: 0.5em;
+}
+.u-tree .collection  {
+  margin: 0;
+}
+
+.u-toolbar-row {
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+.u-grid-icon {
+    padding-top: .25em;
+    cursor: pointer;
+    color: var(--color-primary);
+}
+
+/* login window */
+#uMainWindow {
+    width: 25em;
+    padding: 0.6em;
+    margin: 2em auto;
+}
+
+/* CALL FORM */
+.u-form-row .btn-large {
+    margin: 1em;
+    font-size: 1.25rem;
+}
+
+.u-form-row {
+    margin: 0em auto;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+.u-form-set {
+    width: 24em;
+    margin: 1em;
+    padding: 1em;
+    border: 1px solid var(--color-form-border);
+    border-radius: 1em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    text-align: left;
+    background: var(--color-form-background);
+}
+
+.flex-break {
+    flex-basis: 100%;
+    height: 0;
+}
+
+.u-form-label  {
+    text-align: center;
+    color: var(--color-font-active);
+}
+.u-form-wideset {
+    width: 50em;
+}
+
+.u-form-wideset .u-radio-desc {
+    width: 13em;
+}
+
+.u-cf-field {
+    margin: 0.5em 0;
+    line-height: 2.5em;
+    /*height: 3.4em;*/
+}
+
+.u-cf-field label.active {
+    color: var(--color-font-active);
+}
+
+.u-radio-desc {
+    display: inline-block;
+    width: 12em;
+}
+
+#u-form-extra {
+    width: 76.5em;
+}
+
+#u-form-extra .u-cf-field {
+    width: 32%;
+    margin-left: auto;
+    margin-right: auto;
+    left: auto;
+    right: auto;
+    float: left;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 .75rem;
+    min-height: 1px;
+}
+
+.u-grid-checkbox  {
+    padding-left: 0.55em;
+}
+
+.u-grid-checkbox span {
+    padding-left: 0 !important;
+}
+
+
+.btn-flat, btn {
+    margin-top: 5px;
+    color: var(--color-primary);
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.modal {
+    max-width: 500px;
+    margin-top: 15vh;
+}
+
+.u-slider-label {
+    margin-bottom: 0.4em;
+    margin-top: 0;
+    color: var(--color-font-active);
+}
+
+.u-cf-field .helper-text, .u-profile-field .helper-text {
+    line-height: 1em;
+    min-height: 12px;
+    margin-top: -0.3em;
+    margin-bottom: 0.3em;
+}
+
+#u-mask {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: block;
+    opacity: 0.7;
+    background-color: var(--color-panel);
+    z-index: 99;
+    text-align: center;
+}
+#u-mask .preloader-wrapper {
+    margin: 10em;
+}
+
+.u-ag-check {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    text-align: center;
+}
+
+.u-debug {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: gray;
+}
+
+.u-modal-icon {
+    display: inline-block;
+    margin-right: 1em;
+}
+
+.u-modal-icon.error {
+    color: #aa1d1d;
+}
+
+.u-modal-icon.success {
+    color: var(--color-success);
+}
+
+.u-modal-icon.info {
+    color: var(--color-primary);
+}
+
+.u-modal-msg {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0.5em;
+}
+
+.u-logo-div {
+    width: 100%;
+    text-align: center;
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+.u-partner-logo {
+    max-height: 7em;
+    max-width: 18em;
+}
+
+.hidden {
+    display: none;
+}
+
+#u-form-div-desc, #u-form-div-host, #u-form-div-global {
+    display: none;
+}
+.u-field-clear-btn {
+    color: #c9c9c9;
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    cursor: pointer;
+}
+.u-field-clear-btn:hover {
+    color: #838383;
+}
+
+.site-heading {
+   text-align: center;
+}

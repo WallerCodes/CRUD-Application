@@ -1,0 +1,8 @@
+CTG-9603 - BPCM Tool Enhancements
+---------------------------
+
+1. Run Master SQL Script 'ctg-9603.master.sql'
+	) Open Microsoft SQL Server Manager and connect to server the DB is on
+	) Right-click the database you want to modify and select "New Query"
+	) Paste script 'ctg-9603.master.sql' into resulting window
+	) Select "Execute"

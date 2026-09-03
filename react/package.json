@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "eslint-plugin-react-dom": "^5.18.7",
+    "eslint-plugin-react-x": "^5.18.7"
+  }
+}

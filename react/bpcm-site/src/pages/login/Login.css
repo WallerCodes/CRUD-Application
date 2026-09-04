@@ -1,0 +1,42 @@
+.logo {
+  width: 270px;
+  height: 130px;
+  margin-bottom: -10px;
+}
+
+form input {
+  appearance: none;
+  outline: 0;
+  border: 0px solid rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 250px;
+  border-radius: 8px;
+  padding: 10px 15px;
+  margin: 0 auto 10px auto;
+  display: block;
+  font-size: 18px;
+  color: black;
+  transition-duration: 0.25s;
+  font-weight: 300;
+}
+
+#login-container {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  background-color: black;
+  height: 100%;
+  width: 100%;
+}
+
+#login-form {
+  height: auto;
+  width: auto;
+  margin-top: 40px;
+}
+
+#login-button {
+  width: 150px;
+  height: 25px;
+  border-radius: 8px;
+}

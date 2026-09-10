@@ -1,9 +1,9 @@
 ﻿USE master
 GO
 
-if not exists(select* from sysdatabases where name = 'BypassConfiguration')
+if not exists(select* from sysdatabases where name = 'crudConfiguration')
 begin
-print 'Creating BypassConfiguration database.'
+print 'Creating crudConfiguration database.'
 
 declare @cmdShellActive as integer
 declare @showAdvancedActive as integer
@@ -26,17 +26,17 @@ begin
     RECONFIGURE
 end
 
-execute xp_cmdshell 'mkdir e:\databases\BypassConfiguration'
+execute xp_cmdshell 'mkdir e:\databases\crudConfiguration'
 
-CREATE DATABASE BypassConfiguration
+CREATE DATABASE crudConfiguration
 ON
-(NAME = 'BypassConfiguration_Data1',
-  FILENAME = 'e:\databases\BypassConfiguration\BypassConfiguration_Data1.MDF',
+(NAME = 'crudConfiguration_Data1',
+  FILENAME = 'e:\databases\crudConfiguration\crudConfiguration_Data1.MDF',
   SIZE = 20GB,
   FILEGROWTH = 10GB )
 LOG ON
-(NAME = 'BypassConfiguration_Log',
-  FILENAME = 'e:\databases\BypassConfiguration\BypassConfiguration_Log.LDF',
+(NAME = 'crudConfiguration_Log',
+  FILENAME = 'e:\databases\crudConfiguration\crudConfiguration_Log.LDF',
   SIZE = 1GB,
   FILEGROWTH = 500MB )
 
@@ -45,17 +45,17 @@ if CONVERT(VARCHAR(128), SERVERPROPERTY('productversion')) like '8%'
    or CONVERT(VARCHAR(128), SERVERPROPERTY('productversion')) like '10.0%'
    or CONVERT(VARCHAR(128), SERVERPROPERTY('productversion')) like '10.5%'
 begin
-   execute sp_dboption 'BypassConfiguration', 'select into/bulkcopy', 'FALSE'
-   execute sp_dboption 'BypassConfiguration', 'trunc. log on chkpt.', 'TRUE'
+   execute sp_dboption 'crudConfiguration', 'select into/bulkcopy', 'FALSE'
+   execute sp_dboption 'crudConfiguration', 'trunc. log on chkpt.', 'TRUE'
 end
-alter database BypassConfiguration
+alter database crudConfiguration
 set recovery full
 
 end else begin
-print 'BypassConfiguration database exists'
+print 'crudConfiguration database exists'
 end
 
 GO
 
-USE BypassConfiguration
+USE crudConfiguration
 GO

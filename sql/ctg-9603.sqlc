@@ -1,3 +1,0 @@
-#include "bypass.languages.data.sql"
-#include "bypass.IvrSearchConfigs.sql"
-#include "bypass.CleanData.sql"

@@ -1,0 +1,59 @@
+﻿
+#include "db.sql"
+
+/* crud schema and tables */
+#include "crud.schema.sql"
+#include "crud_static.schema.sql"
+#include "crud.applications.sql"
+#include "crud.languages.sql"
+#include "crud.configurations.sql"
+
+#include "crud.roles.sql"
+#include "crud.users.sql"
+#include "crud.userRoles.sql"
+
+#include "crud_static.userAuditActions.sql"
+#include "crud.userAudits.sql"
+
+#include "crud.DatabaseConfiguration.sql"
+#include "crud.ivrSearchTrace.sql"
+
+/* Stored procedures */
+#include "crud.GetLanguages.sql"
+#include "crud.GetApplications.sql"
+#include "crud.AddApplication.sql"
+
+#include "crud.GetUser.sql"
+#include "crud.GetUsers.sql"
+#include "crud.GetUsersCount.sql"
+#include "crud.AddUser.sql"
+#include "crud.UpdateUser.sql"
+
+#include "crud.AddUserRole.sql"
+#include "crud.RemoveUserRole.sql"
+#include "crud.UpdateUserRoles.sql"
+#include "crud.GetUserRoles.sql"
+#include "crud.GetRolesByUserId.sql"
+
+#include "crud.AddConfiguration.sql"
+#include "crud.UpdateConfiguration.sql"
+#include "crud.RemoveConfiguration.sql"
+#include "crud.GetConfigurations.sql"
+#include "crud.ConfigurationOrderList.sql"
+#include "crud.UpdateConfigurationOrder.sql"
+
+#include "crud.AddUserAudit.sql"
+#include "crud.GetUserAuditHistoryCount.sql"
+#include "crud.GetUserAuditHistory.sql"
+
+#include "crud.IvrSearchConfigs.sql"
+
+/* Seed data for tables */
+#include "crud.languages.data.sql"
+#include "crud.applications.data.sql"
+#include "crud.roles.data.sql"
+#include "crud_static.userAuditActions.data.sql"
+#include "crud.DatabaseConfiguration.data.sql"
+
+/* Cleanup Script */
+#include "crud.CleanData.sql"

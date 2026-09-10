@@ -1,2 +1,2 @@
-@gcc -E -C -P - < BypassConfiguration.master.sqlc > BypassConfiguration.master.sql
+@gcc -E -C -P - < Crud.master.sqlc > Crud.master.sql
 @pause

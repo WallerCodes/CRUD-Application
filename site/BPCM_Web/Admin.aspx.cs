@@ -7,7 +7,7 @@ public partial class Admin : System.Web.UI.Page
     {
         if (Session[DUser.USER_SESSION_KEY] == null)
         {
-            Response.Redirect("Login.aspx");
+            Response.Redirect("Login.tsx");
         }
         else
         {
@@ -29,7 +29,7 @@ public partial class Admin : System.Web.UI.Page
 
             if (user.isSuperAdmin == false && appAdmin == false)
             {
-                Response.Redirect("Login.aspx");
+                Response.Redirect("Login.tsx");
             }
         }
     }

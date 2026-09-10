@@ -7,7 +7,7 @@ public partial class BypassConfig : System.Web.UI.Page
     {
         if (Session[DUser.USER_SESSION_KEY] == null)
         {
-            Response.Redirect("Login.aspx");
+            Response.Redirect("Login.tsx");
         }
         else
         {
@@ -29,7 +29,7 @@ public partial class BypassConfig : System.Web.UI.Page
 
             //if (canEditApps == false)
             //{
-            //   Response.Redirect("Login.aspx");
+            //   Response.Redirect("Login.tsx");
             //}
         }
     }

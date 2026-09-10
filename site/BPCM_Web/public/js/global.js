@@ -449,8 +449,8 @@ $(document).ready(function () {
 
     performerUserEmail = localStorage.getItem('email');
 
-    if (isEmpty(performerUserEmail) && !currPage.includes('Login.aspx')) {
-        window.location.href = './Login.aspx';
+    if (isEmpty(performerUserEmail) && !currPage.includes('Login.tsx')) {
+        window.location.href = './Login.tsx';
     }
 
     checkErrorMessage();
@@ -1966,7 +1966,7 @@ function logoutUser() {
             localStorage.setItem('email', null);
             localStorage.setItem('activityTimer', null)
             performerUserEmail = '';
-            window.location.href = './Login.aspx';
+            window.location.href = './Login.tsx';
         }
     );
 }

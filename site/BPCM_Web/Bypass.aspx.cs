@@ -8,7 +8,7 @@ public partial class Bypass : System.Web.UI.Page
         if (Session[DUser.USER_SESSION_KEY] == null)
         {
             System.Diagnostics.Debug.WriteLine("User session was null...");
-            Response.Redirect("Login.aspx");
+            Response.Redirect("Login.tsx");
         }
         else
         {

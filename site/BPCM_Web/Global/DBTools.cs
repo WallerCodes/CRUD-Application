@@ -366,7 +366,6 @@ public class DBTools
     {
         using (UsanCommand cmd = new UsanCommand("bypass.users", UsanCommandType.SELECT))
         {
-
             cmd.AddSearchParameter(new UsanParameter("userName", login, action: UsanParameterAction.WHERE));
             DUser user = new DUser();
 

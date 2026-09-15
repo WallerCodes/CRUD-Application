@@ -1,8 +1,6 @@
 ﻿namespace CRUD_Backend.Models.DbEntities;
 
-using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -13,7 +11,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 /// </summary>
 [Serializable]
 [Table("users", Schema = "crud")]
-public class DUser
+public class DUsers
 {
     public static readonly string USER_SESSION_KEY = "user_object";
 
@@ -39,24 +37,24 @@ public class DUser
     public bool IsUsanUser { get; set; }
 
     [Column("locked")]
-    public bool Locked { get; set; }
+    public bool IsLocked { get; set; }
 
     [Column("failedLoginAttempts")]
-    public int FailedLoginAttempts { get; set; }
+    public short FailedLoginAttempts { get; set; }
 
     [Column("forceChangePassword")]
     public bool ForceChangePassword { get; set; }
 
     [Column("lastLoginDate")]
-    public DateTime LastLoginDate { get; set; }
+    public DateTime? LastLoginDate { get; set; }
 
     [Column("lastPasswordChangeDate")]
-    public DateTime LastPasswordChangeDate { get; set; }
+    public DateTime? LastPasswordChangeDate { get; set; }
 
     [Column("dateAdded")]
-    public DateTime DateAdded { get; set; }
+    public DateTime? DateAdded { get; set; }
 
-    public DUser()
+    public DUsers()
     {
 
     }

@@ -3,6 +3,7 @@
 ################################################################################
 
 .vs/
+.vscode/
 bin/
 obj/
 site/.vs/
@@ -14,9 +15,11 @@ sql/obj/
 sql/bin/
 sql/.vs/
 
-sql/BypassConfigurationDB.dbmdl
-sql/BypassConfigurationDB.jfm
+sql/Crud.dbmdl
+sql/CrudDB.jfm
 
-/BypassConfigurationDB/obj/Debug
-/sql/BypassConfigurationDB.dbmdl
-/sql/BypassConfigurationDB.jfm
+/CrudConfigurationDB/obj/Debug
+/sql/CrudConfigurationDB.dbmdl
+/sql/CrudConfigurationDB.jfm
+
+node_modules/

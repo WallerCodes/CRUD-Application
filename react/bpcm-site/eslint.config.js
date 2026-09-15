@@ -8,24 +8,24 @@ import reactX from 'eslint-plugin-react-x'
 import reactDom from 'eslint-plugin-react-dom'
 
 export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      js.configs.recommended,
-      tseslint.configs.strictTypeChecked,
-      tseslint.configs.stylisticTypeChecked,
-      reactHooks.configs.flat.recommended,
-      reactRefresh.configs.vite,  
+	globalIgnores(['dist']),
+	{
+		files: ['**/*.{ts,tsx}'],
+		extends: [
+			js.configs.recommended,
+			tseslint.configs.strictTypeChecked,
+			tseslint.configs.stylisticTypeChecked,
+			reactHooks.configs.flat.recommended,
+			reactRefresh.configs.vite,
 
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-  },
+			// Enable lint rules for React
+			reactX.configs['recommended-typescript'],
+			// Enable lint rules for React DOM
+			reactDom.configs.recommended,
+		],
+		parserOptions: {
+			project: ['./tsconfig.node.json', './tsconfig.app.json'],
+			tsconfigRootDir: import.meta.dirname,
+		}
+	},
 ])

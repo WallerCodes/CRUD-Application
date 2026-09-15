@@ -11,7 +11,7 @@ BEGIN TRAN;
 WITH normalized AS
 (
     SELECT
-        crudConfigurationId,
+        crudId,
         ROW_NUMBER() OVER
         (
             PARTITION BY
@@ -22,7 +22,7 @@ WITH normalized AS
 				NULLIF(NULLIF([rank], ''), '-'),
 				NULLIF(NULLIF([offerId], ''), '-'),
 				NULLIF(NULLIF([offerType], ''), '-')
-            ORDER BY crudConfigurationId
+            ORDER BY crudId
         ) AS rn
     FROM [crud].[configurations]
 )
@@ -44,7 +44,7 @@ BEGIN TRAN;
 	FROM information_schema.columns
 	WHERE TABLE_NAME = @TableName
 		AND TABLE_SCHEMA = @Schema
-		AND COLUMN_NAME not in ('crudConfigurationId', 'lastModifiedDateTime');
+		AND COLUMN_NAME not in ('crudId', 'lastModifiedDateTime');
 
 	OPEN col_cursor;
 	FETCH NEXT FROM col_cursor INTO @ColumnName;

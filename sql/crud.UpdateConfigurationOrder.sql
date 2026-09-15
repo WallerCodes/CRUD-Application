@@ -32,14 +32,14 @@ BEGIN
 	UPDATE configs
 	SET [configs].[order] = maxOrder + rowNumber + 1
 	FROM [crud].[configurations] configs
-	JOIN Numbered numbered ON configs.crudConfigurationId = numbered.configurationId
+	JOIN Numbered numbered ON configs.crudId = numbered.configurationId
 	CROSS JOIN MaxOrder
 
 	-- Update configurations based on the list
 	UPDATE configs
 	SET configs.[order] = col.[order]
 	FROM [crud].[configurations] configs
-	INNER JOIN @ConfigurationOrderList col ON configs.[crudConfigurationId] = col.configurationId;
+	INNER JOIN @ConfigurationOrderList col ON configs.[crudId] = col.configurationId;
 END
 
 GO

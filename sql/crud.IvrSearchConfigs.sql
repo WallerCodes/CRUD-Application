@@ -44,7 +44,7 @@ declare @overflowSkill varchar(16), @overflowSkillName varchar(64), @overflowAge
 declare @username varchar(100), @lastModTime datetime
 
 SELECT TOP 1
-	@configId = [crudConfigurationId],
+	@configId = [crudId],
 	@order = [order],
 
 	@peg = [peg],
@@ -92,7 +92,7 @@ begin
 		[offerId],
 		[offerType],
 
-		[crudConfigurationId],
+		[crudId],
 		[order])
 	VALUES (
 		@duration,
@@ -111,7 +111,7 @@ begin
 
 end
 
-SELECT @configId as [crudConfigurationId],
+SELECT @configId as [crudId],
 	@order as [order],
 
 	@peg as [peg],

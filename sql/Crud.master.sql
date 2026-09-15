@@ -1,8 +1,8 @@
 USE master
 GO
-if not exists(select* from sysdatabases where name = 'crudConfiguration')
+if not exists(select* from sysdatabases where name = 'crud')
 begin
-print 'Creating crudConfiguration database.'
+print 'Creating crud database.'
 declare @cmdShellActive as integer
 declare @showAdvancedActive as integer
 declare @cmd as varchar(128)
@@ -18,16 +18,16 @@ begin
     execute sp_configure 'xp_cmdshell', 1
     RECONFIGURE
 end
-execute xp_cmdshell 'mkdir e:\databases\crudConfiguration'
-CREATE DATABASE crudConfiguration
+execute xp_cmdshell 'mkdir c:\databases\crud'
+CREATE DATABASE crud
 ON
-(NAME = 'crudConfiguration_Data1',
-  FILENAME = 'e:\databases\crudConfiguration\crudConfiguration_Data1.MDF',
-  SIZE = 20GB,
-  FILEGROWTH = 10GB )
+(NAME = 'crud_Data1',
+  FILENAME = 'c:\databases\crud\crud_Data1.MDF',
+  SIZE = 10240MB,
+  FILEGROWTH = 5120MB )
 LOG ON
-(NAME = 'crudConfiguration_Log',
-  FILENAME = 'e:\databases\crudConfiguration\crudConfiguration_Log.LDF',
+(NAME = 'crud_Log',
+  FILENAME = 'c:\databases\crud\crud_Log.LDF',
   SIZE = 1GB,
   FILEGROWTH = 500MB )
 if CONVERT(VARCHAR(128), SERVERPROPERTY('productversion')) like '8%'
@@ -35,16 +35,16 @@ if CONVERT(VARCHAR(128), SERVERPROPERTY('productversion')) like '8%'
    or CONVERT(VARCHAR(128), SERVERPROPERTY('productversion')) like '10.0%'
    or CONVERT(VARCHAR(128), SERVERPROPERTY('productversion')) like '10.5%'
 begin
-   execute sp_dboption 'crudConfiguration', 'select into/bulkcopy', 'FALSE'
-   execute sp_dboption 'crudConfiguration', 'trunc. log on chkpt.', 'TRUE'
+   execute sp_dboption 'crud', 'select into/bulkcopy', 'FALSE'
+   execute sp_dboption 'crud', 'trunc. log on chkpt.', 'TRUE'
 end
-alter database crudConfiguration
+alter database crud
 set recovery full
 end else begin
-print 'crudConfiguration database exists'
+print 'crud database exists'
 end
 GO
-USE crudConfiguration
+USE crud
 GO
 /* crud schema and tables */
 if not exists (select * from sys.schemas where name = N'crud')
@@ -414,7 +414,7 @@ IF NOT EXISTS (
 BEGIN
  PRINT 'Creating configurations table'
  CREATE TABLE [crud].[configurations] (
-  [crudConfigurationId] INT NOT NULL identity(1, 1)
+  [crudId] INT NOT NULL identity(1, 1)
   ,[order] INT NOT NULL
   ,[applicationId] INT NOT NULL
   ,[languageId] INT
@@ -447,17 +447,17 @@ IF EXISTS (
   SELECT *
   FROM sys.columns
   WHERE object_id = object_id('[crud].[configurations]')
-   AND name = 'crudConfigurationId'
+   AND name = 'crudId'
    AND is_nullable = 1
   )
 BEGIN
- PRINT 'Converting column crudConfigurationId in configurations to disallow nulls'
+ PRINT 'Converting column crudId in configurations to disallow nulls'
  ALTER TABLE [crud].[configurations]
- ALTER COLUMN [crudConfigurationId] INT NOT NULL
+ ALTER COLUMN [crudId] INT NOT NULL
 END
 ELSE
 BEGIN
- PRINT '	Column crudConfigurationId already in configurations already disallows nulls'
+ PRINT '	Column crudId already in configurations already disallows nulls'
 END
 IF EXISTS (
   SELECT *
@@ -816,7 +816,7 @@ SET @idxShouldBeClustered = 1
 IF (@idxExists = 0)
 BEGIN
  PRINT 'Creating  PK constraint configurationsPrimaryKey on configurations'
- ALTER TABLE [crud].[configurations] ADD CONSTRAINT [configurationsPrimaryKey] PRIMARY KEY CLUSTERED ([crudConfigurationId] ASC)
+ ALTER TABLE [crud].[configurations] ADD CONSTRAINT [configurationsPrimaryKey] PRIMARY KEY CLUSTERED ([crudId] ASC)
   WITH (
     PAD_INDEX = OFF
     ,ALLOW_PAGE_LOCKS = ON
@@ -2210,7 +2210,7 @@ begin
       [offerId] varchar(8),
       [offerType] varchar(128),
       --output
-      [crudConfigurationId] int,
+      [crudId] int,
       [order] int
    ) on [PRIMARY]
 end
@@ -3023,7 +3023,7 @@ BEGIN
  );
  -- Return the newly inserted configuration
  SELECT
-  [crudConfigurationId],
+  [crudId],
   [order],
   [apps].[applicationId],
   [apps].[application],
@@ -3117,7 +3117,7 @@ BEGIN
  SET @order = ISNULL((
     SELECT [order]
     FROM [crud].[configurations]
-    WHERE [crudConfigurationId] = @configurationId
+    WHERE [crudId] = @configurationId
     ), @order);
  -- Update configuration
  UPDATE [crud].[configurations]
@@ -3140,9 +3140,9 @@ BEGIN
   ,[lastModifiedUserId] = @lastModifiedUserId
   ,[lastModifiedDateTime] = GETDATE()
   ,[order] = @order
- WHERE [crudConfigurationId] = @configurationId;
+ WHERE [crudId] = @configurationId;
  -- Return the updated configuration
- SELECT configs.[crudConfigurationId]
+ SELECT configs.[crudId]
   ,configs.[order]
   ,apps.[applicationId]
   ,apps.[application]
@@ -3167,7 +3167,7 @@ BEGIN
  FROM [crud].[configurations] AS configs
  JOIN [crud].[applications] AS apps ON apps.[applicationId] = configs.[applicationId]
  JOIN [crud].[languages] AS langs ON langs.[languageId] = configs.[languageId]
- WHERE configs.[crudConfigurationId] = @configurationId;
+ WHERE configs.[crudId] = @configurationId;
 END
 GO
 /* drop procedure RemoveConfiguration */
@@ -3180,13 +3180,13 @@ GO
 print 'Altering stored procedure RemoveConfiguration to latest version'
 GO
 ALTER PROCEDURE [crud].[RemoveConfiguration] (
- @crudConfigurationId INT
+ @crudId INT
 )
 AS
 BEGIN
  SET NOCOUNT ON;
  -- Optional: output the record before deletion
- SELECT [crudConfigurationId]
+ SELECT [crudId]
   ,[order]
   ,[applicationId]
   ,[languageId]
@@ -3208,10 +3208,10 @@ BEGIN
   ,[lastModifiedDateTime]
  INTO #DeletedConfig
  FROM [crud].[configurations]
- WHERE [crudConfigurationId] = @crudConfigurationId;
+ WHERE [crudId] = @crudId;
  -- Delete the configuration
  DELETE FROM [crud].[configurations]
- WHERE [crudConfigurationId] = @crudConfigurationId;
+ WHERE [crudId] = @crudId;
  -- Return the deleted row (if needed)
  SELECT * FROM #DeletedConfig;
  DROP TABLE #DeletedConfig;
@@ -3240,7 +3240,7 @@ ALTER PROCEDURE [crud].[GetConfigurations] (
  ,@lastModifiedDate DATETIME = NULL
  )
 AS
-SELECT [crudConfigurationId]
+SELECT [crudId]
  ,[order]
  ,[apps].[applicationId]
  ,[apps].[application]
@@ -3366,13 +3366,13 @@ BEGIN
  UPDATE configs
  SET [configs].[order] = maxOrder + rowNumber + 1
  FROM [crud].[configurations] configs
- JOIN Numbered numbered ON configs.crudConfigurationId = numbered.configurationId
+ JOIN Numbered numbered ON configs.crudId = numbered.configurationId
  CROSS JOIN MaxOrder
  -- Update configurations based on the list
  UPDATE configs
  SET configs.[order] = col.[order]
  FROM [crud].[configurations] configs
- INNER JOIN @ConfigurationOrderList col ON configs.[crudConfigurationId] = col.configurationId;
+ INNER JOIN @ConfigurationOrderList col ON configs.[crudId] = col.configurationId;
 END
 GO
 /* drop procedure AddUserAudit */
@@ -3920,7 +3920,7 @@ declare @skill varchar(16), @skillName varchar(64), @agents int, @med int
 declare @overflowSkill varchar(16), @overflowSkillName varchar(64), @overflowAgents int, @overflowMed int
 declare @username varchar(100), @lastModTime datetime
 SELECT TOP 1
- @configId = [crudConfigurationId],
+ @configId = [crudId],
  @order = [order],
  @peg = [peg],
  @skill = [skillId],
@@ -3960,7 +3960,7 @@ begin
   [rank],
   [offerId],
   [offerType],
-  [crudConfigurationId],
+  [crudId],
   [order])
  VALUES (
   @duration,
@@ -3975,7 +3975,7 @@ begin
   @order
  )
 end
-SELECT @configId as [crudConfigurationId],
+SELECT @configId as [crudId],
  @order as [order],
  @peg as [peg],
  @skill as [skillId],
@@ -4057,7 +4057,7 @@ AND NOT EXISTS (
     SELECT 1
     FROM crud.userRoles ur
     WHERE ur.userId = u.userId
-      AND ur.roleId = r.roleId
+      AND ur.roleId = 3
       AND ur.applicationId = a.applicationId
 );
 if not exists(select 1 from [crud_static].[userAuditActions])
@@ -4122,7 +4122,7 @@ BEGIN TRAN;
 WITH normalized AS
 (
     SELECT
-        crudConfigurationId,
+        crudId,
         ROW_NUMBER() OVER
         (
             PARTITION BY
@@ -4133,7 +4133,7 @@ WITH normalized AS
     NULLIF(NULLIF([rank], ''), '-'),
     NULLIF(NULLIF([offerId], ''), '-'),
     NULLIF(NULLIF([offerType], ''), '-')
-            ORDER BY crudConfigurationId
+            ORDER BY crudId
         ) AS rn
     FROM [crud].[configurations]
 )
@@ -4151,7 +4151,7 @@ BEGIN TRAN;
  FROM information_schema.columns
  WHERE TABLE_NAME = @TableName
   AND TABLE_SCHEMA = @Schema
-  AND COLUMN_NAME not in ('crudConfigurationId', 'lastModifiedDateTime');
+  AND COLUMN_NAME not in ('crudId', 'lastModifiedDateTime');
  OPEN col_cursor;
  FETCH NEXT FROM col_cursor INTO @ColumnName;
  WHILE @@FETCH_STATUS = 0

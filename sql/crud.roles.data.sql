@@ -28,7 +28,7 @@ AND NOT EXISTS (
     SELECT 1
     FROM crud.userRoles ur
     WHERE ur.userId = u.userId
-      AND ur.roleId = r.roleId
+      AND ur.roleId = 3
       AND ur.applicationId = a.applicationId
 );
 

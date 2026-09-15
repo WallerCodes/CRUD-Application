@@ -16,7 +16,7 @@ BEGIN
 	PRINT 'Creating configurations table'
 
 	CREATE TABLE [crud].[configurations] (
-		[crudConfigurationId] INT NOT NULL identity(1, 1)
+		[crudId] INT NOT NULL identity(1, 1)
 		,[order] INT NOT NULL
 		,[applicationId] INT NOT NULL
 		,[languageId] INT
@@ -50,19 +50,19 @@ IF EXISTS (
 		SELECT *
 		FROM sys.columns
 		WHERE object_id = object_id('[crud].[configurations]')
-			AND name = 'crudConfigurationId'
+			AND name = 'crudId'
 			AND is_nullable = 1
 		)
 BEGIN
-	PRINT 'Converting column crudConfigurationId in configurations to disallow nulls'
+	PRINT 'Converting column crudId in configurations to disallow nulls'
 
 	ALTER TABLE [crud].[configurations]
 
-	ALTER COLUMN [crudConfigurationId] INT NOT NULL
+	ALTER COLUMN [crudId] INT NOT NULL
 END
 ELSE
 BEGIN
-	PRINT '	Column crudConfigurationId already in configurations already disallows nulls'
+	PRINT '	Column crudId already in configurations already disallows nulls'
 END
 
 IF EXISTS (
@@ -483,7 +483,7 @@ IF (@idxExists = 0)
 BEGIN
 	PRINT 'Creating  PK constraint configurationsPrimaryKey on configurations'
 
-	ALTER TABLE [crud].[configurations] ADD CONSTRAINT [configurationsPrimaryKey] PRIMARY KEY CLUSTERED ([crudConfigurationId] ASC)
+	ALTER TABLE [crud].[configurations] ADD CONSTRAINT [configurationsPrimaryKey] PRIMARY KEY CLUSTERED ([crudId] ASC)
 		WITH (
 				PAD_INDEX = OFF
 				,ALLOW_PAGE_LOCKS = ON

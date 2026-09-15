@@ -23,7 +23,7 @@ ALTER PROCEDURE [crud].[GetConfigurations] (
 	,@lastModifiedDate DATETIME = NULL
 	)
 AS
-SELECT [crudConfigurationId]
+SELECT [crudId]
 	,[order]
 	,[apps].[applicationId]
 	,[apps].[application]

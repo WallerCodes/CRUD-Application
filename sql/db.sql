@@ -1,9 +1,9 @@
 ﻿USE master
 GO
 
-if not exists(select* from sysdatabases where name = 'crudConfiguration')
+if not exists(select* from sysdatabases where name = 'crud')
 begin
-print 'Creating crudConfiguration database.'
+print 'Creating crud database.'
 
 declare @cmdShellActive as integer
 declare @showAdvancedActive as integer
@@ -26,17 +26,17 @@ begin
     RECONFIGURE
 end
 
-execute xp_cmdshell 'mkdir e:\databases\crudConfiguration'
+execute xp_cmdshell 'mkdir c:\databases\crud'
 
-CREATE DATABASE crudConfiguration
+CREATE DATABASE crud
 ON
-(NAME = 'crudConfiguration_Data1',
-  FILENAME = 'e:\databases\crudConfiguration\crudConfiguration_Data1.MDF',
-  SIZE = 20GB,
-  FILEGROWTH = 10GB )
+(NAME = 'crud_Data1',
+  FILENAME = 'c:\databases\crud\crud_Data1.MDF',
+  SIZE = 10240MB,
+  FILEGROWTH = 5120MB )
 LOG ON
-(NAME = 'crudConfiguration_Log',
-  FILENAME = 'e:\databases\crudConfiguration\crudConfiguration_Log.LDF',
+(NAME = 'crud_Log',
+  FILENAME = 'c:\databases\crud\crud_Log.LDF',
   SIZE = 1GB,
   FILEGROWTH = 500MB )
 
@@ -45,17 +45,17 @@ if CONVERT(VARCHAR(128), SERVERPROPERTY('productversion')) like '8%'
    or CONVERT(VARCHAR(128), SERVERPROPERTY('productversion')) like '10.0%'
    or CONVERT(VARCHAR(128), SERVERPROPERTY('productversion')) like '10.5%'
 begin
-   execute sp_dboption 'crudConfiguration', 'select into/bulkcopy', 'FALSE'
-   execute sp_dboption 'crudConfiguration', 'trunc. log on chkpt.', 'TRUE'
+   execute sp_dboption 'crud', 'select into/bulkcopy', 'FALSE'
+   execute sp_dboption 'crud', 'trunc. log on chkpt.', 'TRUE'
 end
-alter database crudConfiguration
+alter database crud
 set recovery full
 
 end else begin
-print 'crudConfiguration database exists'
+print 'crud database exists'
 end
 
 GO
 
-USE crudConfiguration
+USE crud
 GO

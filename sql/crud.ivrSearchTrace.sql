@@ -23,7 +23,7 @@ begin
       [offerType] varchar(128),
 
       --output
-      [crudConfigurationId] int,
+      [crudId] int,
       [order] int
 
    ) on [PRIMARY]

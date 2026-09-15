@@ -104,7 +104,7 @@ BEGIN
 
 	-- Return the newly inserted configuration
 	SELECT 
-		[crudConfigurationId],
+		[crudId],
 		[order],
 		[apps].[applicationId],
 		[apps].[application],

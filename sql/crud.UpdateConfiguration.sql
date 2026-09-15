@@ -55,7 +55,7 @@ BEGIN
 	SET @order = ISNULL((
 				SELECT [order]
 				FROM [crud].[configurations]
-				WHERE [crudConfigurationId] = @configurationId
+				WHERE [crudId] = @configurationId
 				), @order);
 
 	-- Update configuration
@@ -79,10 +79,10 @@ BEGIN
 		,[lastModifiedUserId] = @lastModifiedUserId
 		,[lastModifiedDateTime] = GETDATE()
 		,[order] = @order
-	WHERE [crudConfigurationId] = @configurationId;
+	WHERE [crudId] = @configurationId;
 
 	-- Return the updated configuration
-	SELECT configs.[crudConfigurationId]
+	SELECT configs.[crudId]
 		,configs.[order]
 		,apps.[applicationId]
 		,apps.[application]
@@ -107,7 +107,7 @@ BEGIN
 	FROM [crud].[configurations] AS configs
 	JOIN [crud].[applications] AS apps ON apps.[applicationId] = configs.[applicationId]
 	JOIN [crud].[languages] AS langs ON langs.[languageId] = configs.[languageId]
-	WHERE configs.[crudConfigurationId] = @configurationId;
+	WHERE configs.[crudId] = @configurationId;
 END
 
 GO

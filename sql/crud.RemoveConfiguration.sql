@@ -10,14 +10,14 @@ print 'Altering stored procedure RemoveConfiguration to latest version'
 GO
 
 ALTER PROCEDURE [crud].[RemoveConfiguration] (
-	@crudConfigurationId INT
+	@crudId INT
 )
 AS
 BEGIN
 	SET NOCOUNT ON;
 
 	-- Optional: output the record before deletion
-	SELECT [crudConfigurationId]
+	SELECT [crudId]
 		,[order]
 		,[applicationId]
 		,[languageId]
@@ -39,11 +39,11 @@ BEGIN
 		,[lastModifiedDateTime]
 	INTO #DeletedConfig
 	FROM [crud].[configurations]
-	WHERE [crudConfigurationId] = @crudConfigurationId;
+	WHERE [crudId] = @crudId;
 
 	-- Delete the configuration
 	DELETE FROM [crud].[configurations]
-	WHERE [crudConfigurationId] = @crudConfigurationId;
+	WHERE [crudId] = @crudId;
 
 	-- Return the deleted row (if needed)
 	SELECT * FROM #DeletedConfig;

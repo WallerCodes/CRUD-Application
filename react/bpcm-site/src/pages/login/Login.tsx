@@ -28,8 +28,7 @@ function Login() {
 		</>
 	);
 
-	async function handleSubmit(e: any) {
-		// find out correct type....
+	async function handleSubmit(e: React.SubmitEvent<HTMLFormElement>) {
 		e.preventDefault();
 		var response = await fetch("/api/database/ValidateLogin", {
 			headers: {

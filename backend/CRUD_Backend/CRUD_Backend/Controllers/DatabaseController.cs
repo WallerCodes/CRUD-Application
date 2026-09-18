@@ -3,6 +3,7 @@ using CRUD_Backend.Models.DTOs.Requests;
 using CRUD_Backend.Models.DTOs.Responses;
 using CRUD_Backend.Properties.Database;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace CRUD_Backend.Controllers;
 
@@ -57,7 +58,7 @@ public class DatabaseController : ControllerBase
                 Application = applications.Application,
                 Role = roles.RoleName
             }
-        ).ToList();        
+        ).ToList();
 
         return Ok(
             new UserResponseDTO()
@@ -83,6 +84,31 @@ public class DatabaseController : ControllerBase
                 Success = true
             }
         );
+    }
+
+    [HttpPost("GetConfigurations")]
+    public ActionResult<List<DConfigs>> GetConfigurations([FromBody] GetConfigsRequestDTO request)
+    {       
+        FormattableString sql = $"""
+            EXEC crud.GetConfigurations
+                {(string.IsNullOrEmpty(request.UserName) ? null : request.UserName)},
+                {(string.IsNullOrEmpty(request.Application) ? null : request.Application)},
+                {(string.IsNullOrEmpty(request.Language) ? null : request.Language)},
+                {(string.IsNullOrEmpty(request.DNIS) ? null : request.DNIS)},
+                {(string.IsNullOrEmpty(request.DestinationPhoneNumber) ? null : request.DestinationPhoneNumber)},
+                {(string.IsNullOrEmpty(request.Peg) ? null : request.Peg)},
+                {(string.IsNullOrEmpty(request.Rank) ? null : request.Rank)},
+                {(string.IsNullOrEmpty(request.OfferID) ? null : request.OfferID)},
+                {(string.IsNullOrEmpty(request.OfferType) ? null : request.OfferType)},
+                {(string.IsNullOrEmpty(request.LastModifiedBy) ? null : request.LastModifiedBy)},
+                {request.LastModifiedDate}
+        """;
+
+        var configs = _dbContext.GetConfigurationsResults
+        .FromSqlInterpolated(sql)
+        .ToList();
+
+        return Ok(configs);
     }
 }
 

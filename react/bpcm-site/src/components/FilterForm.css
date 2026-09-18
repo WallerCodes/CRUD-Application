@@ -1,0 +1,33 @@
+#filter-form-panel {
+	background-color: rgb(194, 29, 29);
+	border-color: black;
+	border-radius: 6px;
+	display: flex;
+	flex-direction: column;
+	width: 90%;
+	height: 20%;
+}
+
+.filter-row {
+	display: flex;
+	flex-direction: row;
+	height: auto;
+}
+
+.filter-input-field {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 120px;
+}
+
+.filter-label {
+	width: 100px;
+	align-content: center;
+	text-align: center;
+}
+.filter-input {
+	width: 100px;
+	text-align: center;
+}

@@ -1,0 +1,46 @@
+#config-table-container {
+	width: 90%;
+}
+
+#config-table-header {
+	display: flex;
+	flex-direction: row;
+	background-color: blue;
+	border-color: black;
+	border-width: 2px;
+	border-style: solid;
+	padding-top: 10px;
+}
+
+/* .config-table-header-label {
+	width: 70px;
+} */
+
+.config-table-data-row{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	background-color: yellow;
+	border-color: black;
+	border-width: 1px;
+	border-style: solid;	
+	min-height: 40px;
+}
+
+.config-table-block{
+	display: flex;
+	justify-content: center;
+	width: 90px;
+	font-size: 12px;
+}
+
+.config-table-collapsible{
+	display: flex;
+	padding-left: 10px;
+	font-weight: bold;
+}
+
+.config-table-button{
+	margin-left: 2px;
+	margin-right: 2px;	
+}
